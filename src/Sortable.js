@@ -983,6 +983,15 @@ Sortable.prototype = /** @lends Sortable.prototype */ {
 		}
 	},
 
+	_onDragEnter: function(evt){
+		_dispatchEvent({
+			sortable: this,
+			name: 'sort',
+			toEl: parentEl,
+			originalEvent: evt
+		});
+	},
+
 
 	// Returns true - if no further action is needed (either inserted or another condition)
 	_onDragOver: function (/**Event*/evt) {
@@ -1530,6 +1539,8 @@ Sortable.prototype = /** @lends Sortable.prototype */ {
 				break;
 
 			case 'dragenter':
+				this._onDragEnter(evt);
+				break;
 			case 'dragover':
 				if (dragEl) {
 					this._onDragOver(evt);
