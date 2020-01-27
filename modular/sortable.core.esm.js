@@ -2068,11 +2068,12 @@ Sortable.prototype =
 
         dragEl.style['will-change'] = ''; // Remove classes
         // ghostClass is added in dragStarted
-        // if (moved && !awaitingDragStarted) {
-        // 	toggleClass(dragEl, putSortable ? putSortable.options.ghostClass : this.options.ghostClass, false);
-        // }
-        // toggleClass(dragEl, this.options.chosenClass, false);
-        // Drag stop event
+
+        if (moved && !awaitingDragStarted) {
+          toggleClass(dragEl, putSortable ? putSortable.options.ghostClass : this.options.ghostClass, false);
+        }
+
+        toggleClass(dragEl, this.options.chosenClass, false); // Drag stop event
 
         _dispatchEvent({
           sortable: this,
