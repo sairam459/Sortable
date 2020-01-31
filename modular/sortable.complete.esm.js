@@ -1708,14 +1708,6 @@ Sortable.prototype =
       css(document.body, 'user-select', 'none');
     }
   },
-  _onDragEnter: function (evt) {
-    _dispatchEvent({
-      sortable: this,
-      name: 'sort',
-      toEl: parentEl,
-      originalEvent: evt
-    });
-  },
   // Returns true - if no further action is needed (either inserted or another condition)
   _onDragOver: function (
   /**Event*/
@@ -2059,9 +2051,8 @@ Sortable.prototype =
       if (moved) {
         evt.cancelable && evt.preventDefault();
         !options.dropBubble && evt.stopPropagation();
-      }
+      } // ghostEl && ghostEl.parentNode && ghostEl.parentNode.removeChild(ghostEl);
 
-      ghostEl && ghostEl.parentNode && ghostEl.parentNode.removeChild(ghostEl);
 
       if (rootEl === parentEl || putSortable && putSortable.lastPutMode !== 'clone') {
         // Remove clone(s)
@@ -2198,10 +2189,6 @@ Sortable.prototype =
         break;
 
       case 'dragenter':
-        this._onDragEnter(evt);
-
-        break;
-
       case 'dragover':
         if (dragEl) {
           this._onDragOver(evt);
