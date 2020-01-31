@@ -2178,23 +2178,21 @@
           if (rootEl !== parentEl) {
             if (newIndex >= 0) {
               // Add event
-              _dispatchEvent({
-                rootEl: parentEl,
-                name: 'add',
-                toEl: parentEl,
-                fromEl: rootEl,
-                originalEvent: evt
-              }); // Remove event
-
-
-              _dispatchEvent({
-                sortable: this,
-                name: 'remove',
-                toEl: parentEl,
-                originalEvent: evt
-              }); // drag from one list and drop into another
-
-
+              // _dispatchEvent({
+              // 	rootEl: parentEl,
+              // 	name: 'add',
+              // 	toEl: parentEl,
+              // 	fromEl: rootEl,
+              // 	originalEvent: evt
+              // });
+              // // Remove event
+              // _dispatchEvent({
+              // 	sortable: this,
+              // 	name: 'remove',
+              // 	toEl: parentEl,
+              // 	originalEvent: evt
+              // });
+              // drag from one list and drop into another
               _dispatchEvent({
                 rootEl: parentEl,
                 name: 'sort',
@@ -2216,13 +2214,12 @@
             if (newIndex !== oldIndex) {
               if (newIndex >= 0) {
                 // drag & drop within the same list
-                _dispatchEvent({
-                  sortable: this,
-                  name: 'update',
-                  toEl: parentEl,
-                  originalEvent: evt
-                });
-
+                // _dispatchEvent({
+                // 	sortable: this,
+                // 	name: 'update',
+                // 	toEl: parentEl,
+                // 	originalEvent: evt
+                // });
                 _dispatchEvent({
                   sortable: this,
                   name: 'sort',
