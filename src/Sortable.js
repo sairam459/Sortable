@@ -1365,7 +1365,7 @@ Sortable.prototype = /** @lends Sortable.prototype */ {
 
 			if (rootEl === parentEl || (putSortable && putSortable.lastPutMode !== 'clone')) {
 				// Remove clone(s)
-				cloneEl && cloneEl.parentNode && cloneEl.parentNode.removeChild(cloneEl);
+				// cloneEl && cloneEl.parentNode && cloneEl.parentNode.removeChild(cloneEl);
 			}
 
 			if (dragEl) {

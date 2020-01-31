@@ -2148,10 +2148,7 @@
         } // ghostEl && ghostEl.parentNode && ghostEl.parentNode.removeChild(ghostEl);
 
 
-        if (rootEl === parentEl || putSortable && putSortable.lastPutMode !== 'clone') {
-          // Remove clone(s)
-          cloneEl && cloneEl.parentNode && cloneEl.parentNode.removeChild(cloneEl);
-        }
+        if (rootEl === parentEl || putSortable && putSortable.lastPutMode !== 'clone') ;
 
         if (dragEl) {
           if (this.nativeDraggable) {
